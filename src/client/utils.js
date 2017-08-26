@@ -1,5 +1,7 @@
 import React from 'react';
 import Transition from 'react-transition-group/Transition';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
+
 
 const duration = 300;
 
@@ -9,29 +11,22 @@ const defaultStyle = {
 };
 
 const transitionStyles = {
-  entering: { opacity: 1 },
+  entering: { opacity: 0.01 },
+  exited: { opacity: 0.01 },  
   entered:  { opacity: 1 },
 };
 
 export const transitionedPage = name => WrappedComponent => {
   const TransitionedComponent = props => (
-
-      <WrappedComponent {...props} />
+    <TransitionGroup appear={true} exit={false} enter={false}>
+      <Transition appear timeout={duration}>
+        {state => (
+          <div style={{ ...defaultStyle, ...transitionStyles[state]}}>
+            <WrappedComponent {...props} />
+          </div>
+        )}
+      </Transition>
+    </TransitionGroup>
   );
   return TransitionedComponent;
 };
-
-// import { RouteTransition } from 'react-router-transition';
-// export const transitionedPage = name => WrappedComponent => {
-//   const TransitionedComponent = props => (
-//     <RouteTransition
-//       pathname={name}
-//       atEnter={{ opacity: 0 }}
-//       atLeave={{ opacity: 0 }}
-//       atActive={{ opacity: 1 }}
-//     >
-//       <WrappedComponent {...props} />
-//     </RouteTransition>
-//   );
-//   return TransitionedComponent;
-// };

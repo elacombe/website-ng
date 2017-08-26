@@ -31,8 +31,8 @@ class App extends Component {
               path={route.path}
               exact={route.exact}
               render={makeRoute(route, !this.ssr)}
-            />
-          ))}
+            />)
+          )}
           <Redirect to={defaultRoute().path} />
         </Switch>
       </div>

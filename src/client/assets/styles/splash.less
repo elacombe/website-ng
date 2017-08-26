@@ -1,0 +1,51 @@
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/images';
+@import '../../assets/styles/hexagon';
+@import '../../assets/styles/fade-link';
+
+.splash {
+  ::selection {
+    color: @red;
+    background: @white;
+  }
+  background-image: @pattern-dot-dark-red;
+  background-color: @red;
+  color: @grey;
+  .separator-dark-red {
+    span {
+      display: block;
+      .hexagon(20, @dark-red);
+    }
+  }
+  .separator-grey {
+    position: relative;
+    top: 12px;
+    span {
+      display: block;
+      .hexagon(20, @grey);
+    }
+  }
+  h1 {
+    margin-top: 40px;
+    font-size: 200px;
+  }
+  h2 {
+    font-size: 50px;
+    margin-top: 0;
+    font-family: @roboto, Times;
+  }
+  h3 {
+    color: @grey;
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+  h4 {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    a {
+      .fade-link();
+      &.hiring { .fade-link(@light-grey, @red, @light-grey); }
+    }
+  }
+}

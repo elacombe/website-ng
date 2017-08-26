@@ -1,0 +1,68 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/media';
+
+/* The element to apply the animation to */
+/* blinking in ssr mode
+.home, .technologies, .portfolio {
+  animation-name: example;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+*/
+
+body {
+  padding-top: 45px;
+  font-family: @lato;
+  a:hover, a:active, a:focus {
+    outline: none;
+    cursor: pointer;
+  }
+  .center-block { float: none; } /* Bootstrap patch */
+  ::selection {
+    color: @white;
+    background: @red;
+  }
+
+  q::before, q::after {
+    content: none;
+  }
+
+  .preloader {
+    padding-top: 40px;
+    text-align: center;
+    color: @red;
+    .glyphicon {
+      font-size: 200px;
+      margin-right: 14px;
+    }
+  }
+}
+
+.app-appear {
+  opacity: 0.01;
+}
+
+.app-appear.app-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.app-enter {
+  opacity: 0.01;
+}
+
+.app-enter.app-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.app-leave {
+  opacity: 1;
+}
+
+.app-leave.app-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-in;
+}
+

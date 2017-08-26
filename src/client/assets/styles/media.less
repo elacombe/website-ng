@@ -1,0 +1,60 @@
+@media (min-width: 1200px) {
+  .container { max-width: 970px; }
+}
+
+@media (max-width: 990px) {
+  .slide .body p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .home .content {
+    .center-row {
+      height: 176px;
+      .row { top: -54%; }
+    }
+    .hex {
+      div {
+        min-height: 207px;
+        p { font-size: 13px; }
+      }
+    }
+  }
+  .technologies {
+    #datavisualization, #frontend, #backend, #nosql {
+      img {
+        max-height: 150px;
+        max-width: initial;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .splash h1 { font-size: 130px; }
+  .home .content .hex {
+    width: 277px;
+    div {
+      padding: 65px 0;
+      margin: 0;
+      &.fat { padding: 55px 0 75px 0; }
+      span.glyphicon { font-size: 50px; }
+      h3 { padding-bottom: 10px; }
+      p {
+        font-size: 13px;
+        padding: 0 5px;
+        &.thin { padding: 0; }
+      }
+    }
+  }
+  .technologies {
+    .headroom nav .row > div > div h3 { font-size: 9px; }
+    .slide .head { margin-top: 40px; }
+    #datavisualization, #frontend, #backend, #nosql {
+      img {
+        width: 100%;
+        max-height: initial;
+        max-width: initial;
+      }
+    }
+  }
+}

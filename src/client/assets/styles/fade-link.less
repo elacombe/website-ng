@@ -1,0 +1,21 @@
+.fade-link(@base: @red, @hover: @light-grey, @border: @light-grey) {
+  font-size: 16px;
+  color: @hover;
+  background-color: @base;
+  border: 1px solid @border;
+  padding: 15px 25px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.5s ease 0s;
+  &:hover, &:active {
+    color: @base;
+    background-color: @hover;
+    border-color: @base;
+    text-decoration: none;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    transition: all 0.5s ease 0s;
+  }
+}

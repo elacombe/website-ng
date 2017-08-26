@@ -1,0 +1,165 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/images';
+
+.header {
+  .blog {
+    a {
+      z-index: 1000;
+      text-decoration: none;
+      color: @grey;
+      position: fixed;
+      top: 10px;
+      font-size: 20px;
+      display: block;
+      right: 50px;
+      transition: all .5s ease 0s;
+      &:hover, &:active { color: @white; }
+    }
+  }
+  .brand {
+    a {
+      display: inline-block;
+      padding-top: 10px;
+      text-decoration: none;
+      color: @grey;
+      font-size: 18px;
+      transition: all .5s ease 0s;
+      &:hover, &:active { color: @white; }
+      span { padding-right: 5px; }
+    }
+  }
+  .breadcrumbs {
+    z-index: 1000;
+    color: @grey;
+    position: fixed;
+    top: 10px;
+    left: 50px;
+    font-size: 18px;
+  }
+  .contact {
+    a {
+      z-index: 1000;
+      text-decoration: none;
+      color: @grey;
+      position: fixed;
+      top: 10px;
+      font-size: 20px;
+      display: block;
+      right: 15px;
+      transition: all .5s ease 0s;
+      &:hover, &:active { color: @white; }
+    }
+  }
+  .menu {
+    nav {
+      z-index: 1001;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 170px;
+      height: 100%;
+      transition: all .5s ease 0s;
+      transform: translateX(-100%);
+      background-color: @dark-grey;
+      background-image: @pattern-dot-darker-grey;
+      border-right: 1px solid @darker-grey;
+      ul {
+        margin: 44px 0 0 0;
+        padding: 0;
+        border-top: 1px solid @darker-grey;
+        list-style: none;
+        li {
+          a {
+            margin: 0 15px;
+            padding: 15px 0;
+            color: @grey;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: left;
+            transition: all .5s ease 0s;
+            span.glyphicon { margin: 0 10px 0 2px; }
+            &:hover { color: @white; }
+            &.active { color: @red; }
+            .inverse {
+              color: @red;
+              &:hover { color: @dark-red; }
+            }
+          }
+        }
+      }
+    }
+    .overlay {
+      z-index: -1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0);
+      transition: background-color 0.3s, height 0s 0.3s;
+    }
+    &.active {
+      nav { transform: translateX(0%); }
+      .overlay {
+        z-index: 1000;
+        background-color: rgba(0,0,0,0.15);
+      }
+    }
+  }
+  .nav {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    background-image: @pattern-dot-dark-red;
+    background-color: @red;
+    border-bottom: 1px solid @dark-red;
+  }
+  .toggle {
+    a {
+      z-index: 1002;
+      position: fixed;
+      top: 10px;
+      left: 15px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      &:hover, &:active {
+        span, span:before, span:after { background-color: @white; }
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: @grey;
+        transition: all .5s ease 0s;
+        &:before, &:after {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: @grey;
+          content: '';
+          transition: all .5s ease 0s;
+        }
+        &:before { transform: translateY(250%); }
+        &:after { transform: translateY(-250%); }
+      }
+    }
+    &.active {
+      a {
+        span {
+          background-color: transparent;
+          &:before { transform: translateY(0) rotate(-45deg); }
+          &:after { transform: translateY(0) rotate(45deg); }
+        }
+      }
+    }
+  }
+}

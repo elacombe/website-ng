@@ -1,0 +1,145 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/images';
+
+@size: 50px;
+
+.technologies {
+  nav {
+    .row > div {
+      a {
+        background: @hex-border-light-grey center center no-repeat;
+        background-size: @size * 2;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        color: @grey;
+        transition: all .5s ease-in 0s;
+        &:hover { color: @white; }
+      }
+      h3 {
+        text-align: center;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        color: @grey;
+      }
+      p {
+        text-align: center;
+        color: @grey;
+      }
+    }
+  }
+
+  .splash {
+    h2 { margin-top: 60px; }
+    h3 {
+      span { color: @white; }
+    }
+    nav {
+      margin: 40px 0 20px 0;
+      .row > div {
+        a {
+          font-size: @size;
+          display: flex;
+          justify-content: center;
+          padding: 30px;
+          &:hover {
+            transform: translateY(10px);
+          }
+        }
+        h3 { font-size: 15px; }
+        p { font-size: 12px; }
+      }
+    }
+  }
+
+  span.red { color: @red; }
+
+  .headroom {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    right: 0;
+    background-image: @pattern-dot-dark-red;
+    background-color: @red;
+    border-bottom: 1px solid @dark-red;
+    transition: all .5s ease 0s;
+    nav {
+      padding: 10px 0;
+      .row {
+        position: relative;
+        & > div > div {
+          text-align: center;
+          a {
+            padding: 5px;
+            background: none;
+            font-size: 28px;
+            &.active { color: @dark-red; }
+          }
+          h3 {
+            font-size: 12px;
+            margin-top: 0;
+          }
+          p { display: none; }
+        }
+        .line {
+          border-top: 1px dotted @grey;
+          position: absolute;
+          top: 15px;
+          right: 120px;
+          left: 120px;
+          display: block;
+          z-index: -1;
+          display: none;
+        }
+      }
+    }
+    .headroom--unpinned, &.headroom--top {
+      transform: translateY(-100%);
+    }
+    .headroom--not-top {
+      visibility: visible;
+      transform: translateY(0%);
+    }
+  }
+
+  .javascript .javascript1, #datavisualization, #backend, .contact {
+    background-image: @pattern-dot-grey;
+    background-color: @light-grey;
+  }
+  .javascript .javascript2, #frontend, #nosql {
+    background-image: @pattern-dot-light-grey;
+    background-color: @white;
+  }
+  .javascript1 {
+    &.slide .body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    &.slide .strip.bottom {
+      padding-top: 0;
+    }
+    .image {
+      &.ecosystem { content: url('../../assets/images/ecosystem.png'); }
+      &.performance { content: url('../../assets/images/performance.png'); }
+      &.adoption { content: url('../../assets/images/adoption.png'); }
+    }
+  }
+  #datavisualization, #frontend, #backend, #nosql {
+    .image {
+      width: auto;
+      max-width: 500px;
+      padding-bottom: 40px;
+      display: inline-block;
+      &.nodejs { content: url('../../assets/images/nodejs.png'); }
+      &.d3js { content: url('../../assets/images/d3js.png'); }
+      &.mongodb { content: url('../../assets/images/mongodb.png'); }
+      &.angularjs { content: url('../../assets/images/angularjs.png'); }
+      &.react { content: url('../../assets/images/react.png'); }
+    }
+  }
+  #datavisualization img { max-width: none; }
+}

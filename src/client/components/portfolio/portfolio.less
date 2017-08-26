@@ -1,0 +1,47 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/images';
+@import '../../assets/styles/splash';
+
+.portfolio {
+  .splash {
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    h3 {
+      span { color: @white; }
+    }
+  }
+  .content {
+    background-image: @pattern-dot-grey;
+    background-color: @light-grey;
+    img {
+      width: auto;
+      max-width: 500px;
+      padding-bottom: 40px;
+    }
+    p { margin-bottom: 40px; }
+    a {
+      display: inline-block;
+      height: 100px;
+    }
+    .image {
+      width: auto;
+      max-width: 300px;
+      &.oecd { content: url('../../assets/images/oecd.png'); margin-top: 20px; }
+      &.rothschild { content: url('../../assets/images/rothschild.svg'); }
+      &.factset { content: url('../../assets/images/factset.png'); }
+      &.platform5 { content: url('../../assets/images/platform5.png'); }
+      &.lexsi { content: url('../../assets/images/lexsi.png'); }
+      &.jeuxvideocom { content: url('../../assets/images/jeuxvideocom.png'); }
+      &.venteprivee { content: url('../../assets/images/venteprivee.png'); }
+      &.cnes { content: url('../../assets/images/cnes.png'); }
+      &.lvmh { content: url('../../assets/images/lvmh.png'); }
+      &.eiffage { content: url('../../assets/images/eiffage.png'); }
+    }
+  }
+  .contact {
+    background-image: @pattern-dot-light-grey;
+    background-color: @white;
+  }
+}

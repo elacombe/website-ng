@@ -21,7 +21,7 @@ const mountNode = window.document.getElementById('root');
 const root = (
   <IntlProvider locale={language} messages={messages}>
     <Router>
-      <App ssr={false} />
+      <App ssr={true} />
     </Router>
   </IntlProvider>
 );

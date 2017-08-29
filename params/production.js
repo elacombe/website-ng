@@ -4,7 +4,7 @@ module.exports = {
   devServer: null,
   server: {
     host: '0.0.0.0',
-    port: 3006, 
+    port: 80, 
   },
 
 };
